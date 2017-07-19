@@ -1,3 +1,12 @@
+# Udacity Self-Driving Car Nanodegree
+
+## Project #3: Behavioral Cloning
+
+The goals of this project are to:
+* Build a deep network to clone driving behavior (model.py, model.h5, drive.py)
+* Record a video of the vehicle autonomously driving one lap around the track (video.mp4)
+* Reflect on the project (writeup.md)
+
 # Behaviorial Cloning Project
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
