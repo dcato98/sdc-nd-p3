@@ -17,6 +17,7 @@ The goals of this project are to:
 
 [image1]: ./examples/center_2017_07_20_16_43_38_565.jpg "Normal Image"
 [image2]: ./examples/center_2017_07_20_16_43_38_565_flipped.jpg "Flipped Image"
+[image3]: ./examples/train-valid-split.png "Flipped Image"
 
 ### Writeup
 #### 1. Provide a writeup that includes all of the [rubric points](https://review.udacity.com/#!/rubrics/432/view) and describes how I addressed each point in my implementation.
@@ -109,6 +110,10 @@ I randomly flipped images and their angles in an attempt to reduce the bias for 
 
 ![alt text][image2]
 
-After the collection process, I had 37302 data points (including left and right camera angles) and put 25% of the data into a validation set. Training data preprocessing was done in the batch generator (model.py lines 14-70) and consisted of random horizontal flipping and random shuffling.
+After the collection process, I had 37302 data points (including left and right camera angles) and put 25% of the data into a validation set. The validation set was created by taking a consectutive slice out of each directory (model.py lines 152-179). Since each directory stores the images for one lap, we end up with one validation slice per lap. Each validation slice starts at a random position in the recording, as illustrated by the graphic below:
+
+![alt text][image3]
+
+Training and validation preprocessing was done in the batch generator (model.py lines 14-70) and consisted of random horizontal flipping and random shuffling.
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 2 as evidenced by the validation loss approximately equal to the training loss and the model successfully driving around the track.
